@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Portfolio of Aymane Lakouiss, research engineer in deep learning, computer vision, and image analysis."
+    >
+    <title>Aymane Lakouiss | Deep Learning & Computer Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+      .project-showcase { display: grid; gap: 2rem; }
+      .project-feature {
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+        gap: clamp(1.5rem, 4vw, 4rem);
+        align-items: center;
+        padding: clamp(1rem, 2vw, 1.5rem);
+        border: 1px solid rgba(127,127,127,.22);
+        border-radius: 24px;
+      }
+      .project-feature.reverse .project-visual { order: 2; }
+      .project-visual, .card-image {
+        position: relative;
+        overflow: hidden;
+        min-height: 280px;
+        border-radius: 18px;
+        background: linear-gradient(135deg, rgba(110,120,255,.12), rgba(40,190,180,.12));
+      }
+      .project-visual img, .card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .visual-placeholder {
+        position: absolute;
+        inset: 0;
+        display: none;
+        place-items: center;
+        padding: 2rem;
+        text-align: center;
+        font-weight: 600;
+        opacity: .72;
+      }
+      .image-missing .visual-placeholder { display: grid; }
+      .project-content h3 { font-size: clamp(1.7rem, 3vw, 2.5rem); margin-bottom: .8rem; }
+      .project-details {
+        display: grid;
+        gap: .85rem;
+        margin: 1.25rem 0;
+      }
+      .project-details p { margin: .2rem 0 0; }
+      .tag-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .55rem;
+        padding: 0;
+        margin: 1.25rem 0;
+        list-style: none;
+      }
+      .tag-list li {
+        padding: .4rem .7rem;
+        border: 1px solid rgba(127,127,127,.3);
+        border-radius: 999px;
+        font-size: .85rem;
+      }
+      .project-link { font-weight: 700; text-decoration: none; }
+      .compact-projects { margin-top: 0; }
+      .card-image { min-height: 210px; margin-bottom: 1.25rem; }
+      @media (max-width: 820px) {
+        .project-feature { grid-template-columns: 1fr; }
+        .project-feature.reverse .project-visual { order: 0; }
+        .project-visual { min-height: 230px; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="Aymane Lakouiss home">
+        <span class="brand-mark">AL</span>
+        <span>Aymane Lakouiss</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" data-nav>
+        <a href="#projects">Projects</a>
+        <a href="#work">Experience</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-media" aria-hidden="true">
+          <img src="assets/computer-vision-hero.png" alt="">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Deep Learning | Computer Vision | Image Analysis</p>
+          <h1 id="hero-title">Turning complex visual data into reliable AI solutions.</h1>
+          <p class="hero-copy">
+            PhD researcher and AI engineer specialized in computer vision, deep learning,
+            image analysis, and diffusion models — from research prototypes to practical visual systems.
+          </p>
+          <div class="hero-actions" aria-label="Primary actions">
+            <a class="button primary" href="assets/Aymane-Lakouiss-CV.pdf" download>Download CV</a>
+            <a class="button secondary" href="mailto:aymane.lakouisse.51@gmail.com">Email me</a>
+            <a
+              class="button secondary"
+              href="https://www.linkedin.com/in/aymane-lakouiss-323459230/"
+              target="_blank"
+              rel="noreferrer"
+            >LinkedIn</a>
+            <a
+              class="button secondary"
+              href="https://github.com/Aymane2001-star"
+              target="_blank"
+              rel="noreferrer"
+            >GitHub</a>
+          </div>
+          <dl class="hero-facts">
+            <div>
+              <dt>Current role</dt>
+              <dd>PhD Researcher</dd>
+            </div>
+            <div>
+              <dt>Base</dt>
+              <dd>France</dd>
+            </div>
+            <div>
+              <dt>Focus</dt>
+              <dd>AI for image analysis</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="intro band" aria-labelledby="intro-title">
+        <div class="section-inner intro-grid">
+          <div>
+            <p class="section-kicker">Profile</p>
+            <h2 id="intro-title">From signal processing foundations to applied visual AI research.</h2>
+          </div>
+          <p>
+            I enjoy turning difficult visual problems into clear, testable AI pipelines.
+            My work combines mathematical reasoning, experimentation, and practical engineering,
+            with experience in facial image analysis, architectural plans, industrial video,
+            and embedded signal processing.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="work" aria-labelledby="work-title">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="section-kicker">Experience</p>
+            <h2 id="work-title">Applied research and engineering work</h2>
+          </div>
+          <div class="timeline">
+            <article class="timeline-item reveal">
+              <div class="timeline-date">Dec 2025 - Dec 2028</div>
+              <div class="timeline-card">
+                <p class="role">PhD Researcher: Deep Learning & Mathematics</p>
+                <h3>Institut Denis Poisson</h3>
+                <p>
+                  Developing AI-based cosmetic image analysis methods to automate the evaluation
+                  of facial youth-related characteristics and measure treatment effectiveness.
+                </p>
+                <ul>
+                  <li>Designing CNN-based segmentation and classification models.</li>
+                  <li>Improving robustness and accuracy for visual assessment workflows.</li>
+                  <li>Studying correlations between youth indicators and treatment types.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="timeline-item reveal">
+              <div class="timeline-date">Mar 2025 - Aug 2025</div>
+              <div class="timeline-card">
+                <p class="role">Deep Learning & Computer Vision Engineer Intern</p>
+                <h3>Orange Innovation</h3>
+                <p>
+                  Improved deep learning models for automatic extraction of walls, doors, and
+                  windows from architectural floor plan images.
+                </p>
+                <ul>
+                  <li>Optimized model architecture, hyperparameters, and data augmentation.</li>
+                  <li>Refined vectorization through point realignment and segment merging.</li>
+                  <li>Worked on accuracy gains for structured layout understanding.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="timeline-item reveal">
+              <div class="timeline-date">Mar 2024 - Aug 2024</div>
+              <div class="timeline-card">
+                <p class="role">Machine Learning & Computer Vision Engineer Intern</p>
+                <h3>HANDDDLE SAS</h3>
+                <p>
+                  Designed and developed an AI and computer vision solution for industrial data
+                  processing from production videos.
+                </p>
+                <ul>
+                  <li>Extracted relevant information from video streams.</li>
+                  <li>Combined mathematical methods and AI for structured data analysis.</li>
+                  <li>Built foundations for production-oriented visual intelligence.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="timeline-item reveal">
+              <div class="timeline-date">Jun 2023 - Sep 2023</div>
+              <div class="timeline-card">
+                <p class="role">Project Internship</p>
+                <h3>CORDOUAN TECH</h3>
+                <p>
+                  Developed FPGA-based embedded software for digital signal acquisition,
+                  processing, output generation, and formatting.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section work-samples" id="projects" aria-labelledby="samples-title">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="section-kicker">Selected projects</p>
+            <h2 id="samples-title">Visual AI projects and research directions</h2>
+            <p>
+              A selection of applied computer vision projects. Some visuals are illustrative or
+              anonymized to respect confidentiality.
+            </p>
+          </div>
+
+          <div class="project-showcase">
+            <article class="project-feature reveal">
+              <div class="project-visual">
+                <img
+                  src="assets/floor-plan-matching.png"
+                  alt="Illustration of architectural floor-plan matching and feature correspondences"
+                  loading="lazy"
+                  data-image-fallback
+                >
+                <span class="visual-placeholder">
+                  Add an anonymized floor-plan matching result here
+                </span>
+              </div>
+              <div class="project-content">
+                <p class="sample-label">Orange Innovation · Computer Vision</p>
+                <h3>Architectural floor-plan matching and structural understanding</h3>
+                <p>
+                  Research and engineering work on matching floor-plan images and improving the
+                  extraction of walls, doors, and windows for cleaner structured representations.
+                </p>
+                <div class="project-details">
+                  <div>
+                    <strong>Objective</strong>
+                    <p>Align related plans and improve automatic extraction and vectorization.</p>
+                  </div>
+                  <div>
+                    <strong>Approach</strong>
+                    <p>Local feature matching with LightGlue, data augmentation, deep learning, and geometric post-processing.</p>
+                  </div>
+                  <div>
+                    <strong>My contribution</strong>
+                    <p>Experimentation, model improvement, matching analysis, point realignment, and segment merging.</p>
+                  </div>
+                </div>
+                <ul class="tag-list" aria-label="Technologies used">
+                  <li>Python</li>
+                  <li>PyTorch</li>
+                  <li>LightGlue</li>
+                  <li>Computer Vision</li>
+                  <li>Image Matching</li>
+                </ul>
+                <a
+                  class="project-link"
+                  href="https://github.com/Aymane2001-star/Matching_LightGlue"
+                  target="_blank"
+                  rel="noreferrer"
+                >View repository →</a>
+              </div>
+            </article>
+
+            <article class="project-feature reverse reveal">
+              <div class="project-visual">
+                <img
+                  src="assets/cosmetic-image-analysis.png"
+                  alt="Illustration of facial wrinkle segmentation and cosmetic image analysis"
+                  loading="lazy"
+                  data-image-fallback
+                >
+                <span class="visual-placeholder">
+                  Add a face image, wrinkle mask, or segmentation example here
+                </span>
+              </div>
+              <div class="project-content">
+                <p class="sample-label">PhD research · Image Analysis</p>
+                <h3>AI-based analysis of facial youth indicators</h3>
+                <p>
+                  Development of quantitative methods for analyzing wrinkles, skin texture,
+                  pigmentation, pores, contrast, and other facial characteristics linked to
+                  cosmetic treatment evaluation.
+                </p>
+                <div class="project-details">
+                  <div>
+                    <strong>Objective</strong>
+                    <p>Automate visual assessment and measure changes before and after cosmetic care.</p>
+                  </div>
+                  <div>
+                    <strong>Approach</strong>
+                    <p>Face parsing, wrinkle segmentation, CNN-based analysis, statistical metrics, and identity-aware evaluation.</p>
+                  </div>
+                  <div>
+                    <strong>Current direction</strong>
+                    <p>Using diffusion models to simulate controlled visual changes when paired before/after data is limited.</p>
+                  </div>
+                </div>
+                <ul class="tag-list" aria-label="Technologies used">
+                  <li>PyTorch</li>
+                  <li>Segmentation</li>
+                  <li>SDXL</li>
+                  <li>Diffusers</li>
+                  <li>LPIPS / SSIM</li>
+                </ul>
+              </div>
+            </article>
+
+            <div class="sample-grid compact-projects">
+              <article class="sample-card reveal">
+                <div class="card-image">
+                  <img
+                    src="assets/diffusion-before-after.png"
+                    alt="Illustration of a controlled before and after image transformation using diffusion models"
+                    loading="lazy"
+                    data-image-fallback
+                  >
+                  <span class="visual-placeholder">Add a diffusion before/after example</span>
+                </div>
+                <p class="sample-label">Generative AI</p>
+                <h3>Controlled image transformation with diffusion models</h3>
+                <p>
+                  Evaluation of SDXL and image-to-image pipelines for realistic, controlled
+                  modifications while preserving facial identity and global structure.
+                </p>
+              </article>
+
+              <article class="sample-card reveal">
+                <div class="card-image">
+                  <img
+                    src="assets/industrial-video-analysis.png"
+                    alt="Illustration of object detection and event analysis in an industrial production video"
+                    loading="lazy"
+                    data-image-fallback
+                  >
+                  <span class="visual-placeholder">Add an anonymized industrial video frame</span>
+                </div>
+                <p class="sample-label">HANDDDLE · Industrial AI</p>
+                <h3>Production video understanding</h3>
+                <p>
+                  Computer vision pipeline for detecting events and extracting structured
+                  information from industrial production videos.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section expertise" id="expertise" aria-labelledby="expertise-title">
+        <div class="section-inner expertise-layout">
+          <div class="section-heading sticky-heading">
+            <p class="section-kicker">Expertise</p>
+            <h2 id="expertise-title">Technical strengths across models, data, and systems.</h2>
+            <p>
+              A research-oriented engineering profile with practical experience moving from
+              data processing to model design and deployment-aware refinement.
+            </p>
+          </div>
+          <div class="skill-columns">
+            <div class="skill-block reveal">
+              <h3>AI & Vision</h3>
+              <ul>
+                <li>Machine learning</li>
+                <li>Deep learning</li>
+                <li>Computer vision</li>
+                <li>CNN segmentation and classification</li>
+                <li>Video processing</li>
+              </ul>
+            </div>
+            <div class="skill-block reveal">
+              <h3>Data & Signal</h3>
+              <ul>
+                <li>Image and signal processing</li>
+                <li>Mathematical modeling</li>
+                <li>Statistical analysis</li>
+                <li>Industrial data processing</li>
+                <li>Vectorization post-processing</li>
+              </ul>
+            </div>
+            <div class="skill-block reveal">
+              <h3>Tools</h3>
+              <ul>
+                <li>Python, C, C++, Matlab, SQL</li>
+                <li>Google Cloud</li>
+                <li>Git</li>
+                <li>Excel, Word, PowerPoint</li>
+              </ul>
+            </div>
+            <div class="skill-block reveal">
+              <h3>Working Style</h3>
+              <ul>
+                <li>Problem solving</li>
+                <li>Autonomy</li>
+                <li>Teamwork</li>
+                <li>Time management</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section education" id="education" aria-labelledby="education-title">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="section-kicker">Education</p>
+            <h2 id="education-title">Academic path</h2>
+          </div>
+          <div class="education-grid">
+            <article class="education-card reveal">
+              <span>2025 - 2028</span>
+              <h3>PhD Thesis</h3>
+              <p>University of Orleans</p>
+              <p>Deep learning based image analysis for cosmetic evaluation.</p>
+            </article>
+            <article class="education-card reveal">
+              <span>2021 - 2025</span>
+              <h3>Engineering Degree</h3>
+              <p>ENSEIRB-MATMECA</p>
+              <p>Electronics department, specializing in signal processing, image processing, and AI.</p>
+            </article>
+            <article class="education-card reveal">
+              <span>2023 - 2024</span>
+              <h3>Master's Degree (ISC)</h3>
+              <p>University of Bordeaux</p>
+              <p>Systems Engineering for Image and Signal Processing.</p>
+            </article>
+            <article class="education-card reveal">
+              <span>2019 - 2021</span>
+              <h3>CPGE MP*</h3>
+              <p>LYDEX</p>
+              <p>Advanced mathematics, physics, and engineering sciences.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact band" id="contact" aria-labelledby="contact-title">
+        <div class="section-inner contact-layout">
+          <div>
+            <p class="section-kicker">Contact</p>
+            <h2 id="contact-title">Have a computer vision problem to solve?</h2>
+            <p>
+              I am available for selected freelance projects, technical collaborations, and research
+              opportunities in deep learning, computer vision, and image analysis.
+            </p>
+          </div>
+          <div class="contact-panel">
+            <a href="mailto:aymane.lakouisse.51@gmail.com">aymane.lakouisse.51@gmail.com</a>
+            <a href="tel:+33751450168">+33 7 51 45 01 68</a>
+            <a
+              href="https://www.linkedin.com/in/aymane-lakouiss-323459230/"
+              target="_blank"
+              rel="noreferrer"
+            >LinkedIn</a>
+            <a href="https://github.com/Aymane2001-star" target="_blank" rel="noreferrer">GitHub</a>
+            <span>France</span>
+            <span>English, French, Arabic, basic German</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span data-year></span> Aymane Lakouiss</p>
+      <a href="#top">Back to top</a>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+  </body>
+</html>
